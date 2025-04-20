@@ -52,3 +52,8 @@ export interface login{
     username: string;
     password: string;
 }
+
+export interface ProductItemCart {
+    product: Product;
+    quantity: number;
+}

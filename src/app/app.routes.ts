@@ -22,6 +22,7 @@ export const routes: Routes = [
   {
     path: 'cart',
     title: 'Cart',
+    canActivate: [authGuard],
     loadComponent: () => import('./pages/cart/cart.component'),
   },
   {
