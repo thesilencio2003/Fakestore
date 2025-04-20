@@ -13,6 +13,7 @@ export default class ProductDetailComponent {
   productService = inject(ProductService);
   id = input.required<string>()
   product?: Product ;
+  rate = 0;
   
     ngOnInit(){
       this.getProduct();
@@ -22,7 +23,12 @@ export default class ProductDetailComponent {
       this.productService.getProduct(this.id()).subscribe((resp) => {
         this.product = resp;
         console.log(this.product);
+        this.rate = Math.round(this.product.rating.rate);
       });
+    }
+
+    createRange(number: number){
+      return new Array(number).fill(0).map((n, index) => index + 1)
     }
 
 }
