@@ -18,10 +18,12 @@ export default class CartComponent {
   }
 
   onDecrease(product: ProductItemCart) {
+    if (product.quantity > 0) {
     this.state.update({
       product:product.product,
       quantity: product.quantity - 1,
-    })
+    });
+  }
   }
 
   onIncrease(product: ProductItemCart) {
